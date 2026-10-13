@@ -9,6 +9,8 @@ ENDCLASS.
 
 CLASS zcl_39_cds_main IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
+    DATA customers TYPE TABLE OF /dmo/customer.
+
     " ABAP CDS
     SELECT FROM /DMO/I_Flight_R
       FIELDS *
@@ -43,5 +45,22 @@ CLASS zcl_39_cds_main IMPLEMENTATION.
     ENDIF.
 
     out->write( connections ).
+
+    " Access Controls
+    SELECT FROM /dmo/customer
+      FIELDS *
+      INTO @DATA(customer).
+
+      AUTHORITY-CHECK OBJECT '/DMO/TRVL'
+                      ID '/DMO/CNTRY' FIELD customer-country_code
+                      ID 'ACTVT' FIELD '03'.
+      IF sy-subrc = 0.
+        APPEND customer TO customers.
+      ELSE.
+        out->write( customer-country_code ).
+      ENDIF.
+    ENDSELECT.
+
+    out->write( customers ).
   ENDMETHOD.
 ENDCLASS.

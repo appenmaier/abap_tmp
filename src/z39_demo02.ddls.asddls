@@ -1,10 +1,8 @@
-@AbapCatalog.viewEnhancementCategory: [ #NONE ]
+@AbapCatalog.viewEnhancementCategory: [ #PROJECTION_LIST ]
 
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 
 @EndUserText.label: 'Demo 2: Inner Joins'
-
-@Metadata.ignorePropagatedAnnotations: true
 
 define view entity Z39_Demo02
   as select from /dmo/connection as Connection

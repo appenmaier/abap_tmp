@@ -1,0 +1,7 @@
+@EndUserText.label: 'Demo 12: Access Controls'
+@MappingRole: true
+define role Z39_DEMO12 {
+  grant select on Z39_DEMO12
+    where (CountryCode) = aspect pfcg_auth(/DMO/TRVL, /DMO/CNTRY, ACTVT = '03');
+            
+}
