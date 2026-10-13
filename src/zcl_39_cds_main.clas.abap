@@ -31,5 +31,17 @@ CLASS zcl_39_cds_main IMPLEMENTATION.
     ENDIF.
 
     out->write( flights2 ).
+
+    " Path Expressions
+    SELECT FROM Z39_Demo09
+      FIELDS CarrierId,
+             ConnectionId,
+             \_Carrier-name AS CarrierName
+      INTO TABLE @DATA(connections).
+    IF sy-subrc <> 0.
+      " error handling
+    ENDIF.
+
+    out->write( connections ).
   ENDMETHOD.
 ENDCLASS.
