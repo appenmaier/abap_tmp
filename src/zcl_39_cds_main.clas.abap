@@ -9,6 +9,7 @@ ENDCLASS.
 
 CLASS zcl_39_cds_main IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
+    " ABAP CDS
     SELECT FROM /DMO/I_Flight_R
       FIELDS *
       WHERE AirlineID = 'LH'
@@ -18,5 +19,17 @@ CLASS zcl_39_cds_main IMPLEMENTATION.
     ENDIF.
 
     out->write( flights ).
+
+    " Views with Parameters
+    SELECT
+      FROM Z39_Demo07( P_CarrierId = 'LH' )
+      FIELDS *
+*      WHERE carrier_id = 'LH'
+      INTO TABLE @DATA(flights2).
+    IF sy-subrc <> 0.
+      " error handling
+    ENDIF.
+
+    out->write( flights2 ).
   ENDMETHOD.
 ENDCLASS.

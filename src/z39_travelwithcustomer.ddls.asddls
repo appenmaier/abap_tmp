@@ -5,9 +5,14 @@
 @EndUserText.label: 'Travel with Customer'
 
 define view entity Z39_TravelWithCustomer
-  as select from Z39_Travel   as Travel
+  as select from Z39_Travel                       as Travel
 
-    inner join   Z39_Customer as Customer on Travel.CustomerId = Customer.CustomerId
+    inner join   Z39_Customer                     as Customer
+      on Travel.CustomerId = Customer.CustomerId
+
+    inner join   DDCDS_CUSTOMER_DOMAIN_VALUE_T(
+                   p_domain_name : '/DMO/STATUS') as StatusText
+      on Travel.Status = StatusText.value_low and StatusText.language = $session.system_language
 
 {
   key Travel.TravelId,
@@ -36,12 +41,19 @@ define view entity Z39_TravelWithCustomer
                           target_currency    => cast('EUR' as abap.cuky),
                           exchange_rate_date => $session.system_date) as TotalPrice,
 
-      cast('EUR' as abap.cuky)                                        as CurrencyCode,
+      cast('EUR' as /dmo/currency_code)                               as CurrencyCode,
 
       Travel.Description,
       Travel.Status,
+
+      @EndUserText.label: 'Status Text'
+      @EndUserText.quickInfo: 'Status Text'
+      StatusText.text                                                 as StatusText,
+
       Customer.CustomerId,
 
+      @EndUserText.label: 'Customer Name'
+      @EndUserText.quickInfo: 'Customer Name'
       case when Customer.Title is initial then concat_with_space(Customer.FirstName, Customer.LastName, 1)
            else concat_with_space(Customer.Title, concat_with_space(Customer.FirstName, Customer.LastName, 1), 1)
       end                                                             as CustomerName,
