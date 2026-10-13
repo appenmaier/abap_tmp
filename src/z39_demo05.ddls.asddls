@@ -2,7 +2,7 @@
 
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 
-@EndUserText.label: 'Demo 5: Domain Fix Values'
+@EndUserText.label: 'Demo 5: Domain Fixed Values'
 
 define view entity Z39_Demo05
   as select from /dmo/supplement                               as Supplement

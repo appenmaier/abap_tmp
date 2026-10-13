@@ -5,7 +5,7 @@
    <DDLS>
     <DDLNAME>Z39_DEMO05</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Demo 5: Domain Fix Values</DDTEXT>
+    <DDTEXT>Demo 5: Domain Fixed Values</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>
