@@ -41,7 +41,7 @@ define view entity Z39_Demo03
                          when '747-400' then 'Boeing'
                          when '767-200' then 'Boeing'
                          else ''
-      end                            as Maker,
+      end                            as Manufacturer,
 
       /* Casts */
       cast(2 as abap.dec(16,2))      as FixedPointNumber1,
