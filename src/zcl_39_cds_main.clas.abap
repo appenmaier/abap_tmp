@@ -1,4 +1,4 @@
-CLASS zcl_abap_cds_demo_01 DEFINITION
+CLASS zcl_39_cds_main DEFINITION
   PUBLIC FINAL
   CREATE PUBLIC.
 
@@ -7,7 +7,7 @@ CLASS zcl_abap_cds_demo_01 DEFINITION
 ENDCLASS.
 
 
-CLASS zcl_abap_cds_demo_01 IMPLEMENTATION.
+CLASS zcl_39_cds_main IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     SELECT FROM /DMO/I_Flight_R
       FIELDS *
