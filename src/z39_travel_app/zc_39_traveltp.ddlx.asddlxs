@@ -1,0 +1,71 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: { typeNamePlural: 'Travels',
+                  typeName: 'Travel',
+                  title.value: 'TravelId',
+                  description.value: 'Description' }
+
+annotate entity ZC_39_TravelTP with
+
+{
+  /* Facets */
+  @UI.facet: [ { position: 10, type: #FIELDGROUP_REFERENCE, targetQualifier: 'Details', label: 'Travel Details'      },
+               { position: 20, type: #FIELDGROUP_REFERENCE, targetQualifier: 'Admin',   label: 'Administrative Data' } ]
+
+
+  /* Fields */
+  @UI.fieldGroup: [ { position: 10, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 10 } ]
+  TravelId;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.selectionField: [ { position: 10 } ]
+  AgencyId;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  CustomerId;
+
+  @UI.fieldGroup: [ { position: 40, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  BeginDate;
+
+  @UI.fieldGroup: [ { position: 50, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.selectionField: [ { position: 40 } ]
+  EndDate;
+
+  @UI.fieldGroup: [ { position: 60, qualifier: 'Details' } ]
+  BookingFee;
+
+  @UI.fieldGroup: [ { position: 70, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.selectionField: [ { position: 50 } ]
+  TotalPrice;
+
+  //    CurrencyCode;
+
+  @UI.fieldGroup: [ { position: 80, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 15 } ]
+  Description;
+
+  @UI.fieldGroup: [ { position: 90, qualifier: 'Details' } ]
+  @UI.lineItem: [ { position: 99 } ]
+  @UI.selectionField: [ { position: 60 } ]
+  Status;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'Admin' } ]
+  Createdby;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'Admin' } ]
+  Createdat;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'Admin' } ]
+  Lastchangedby;
+
+  @UI.fieldGroup: [ { position: 40, qualifier: 'Admin' } ]
+  Lastchangedat;
+}
