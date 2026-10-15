@@ -5,7 +5,8 @@
 /*+[hideWarning] { "IDS" : [ "CARDINALITY_CHECK" ]  } */
 define root view entity ZR_39_MovieTP
   as select from ZI_39_Movie
-  // composition of target_data_source_name as _association_name
+
+  composition [0..*] of ZR_39_RatingTP      as _Ratings
 
   association [0..1] to ZI_39_AverageRating as _AverageRating on $projection.MovieUuid = _AverageRating.MovieUuid
   association [0..1] to ZI_39_GenreText     as _GenreText     on $projection.Genre = _GenreText.Genre
@@ -26,6 +27,6 @@ define root view entity ZR_39_MovieTP
 
       /* Associations */
       _AverageRating,
-      _GenreText
-//  _association_name // Make association public
+      _GenreText,
+      _Ratings
 }

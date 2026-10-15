@@ -13,8 +13,9 @@ annotate entity ZC_39_MovieTP with
 
 {
   /* Facets */
-  @UI.facet: [ { position: 10, type: #FIELDGROUP_REFERENCE, label: 'Movie Details',       targetQualifier: 'Details' },
-               { position: 20, type: #FIELDGROUP_REFERENCE, label: 'Administrative Data', targetQualifier: 'Admin'   } ]
+  @UI.facet: [ { position: 10, type: #FIELDGROUP_REFERENCE, label: 'Movie Details', targetQualifier: 'Details' },
+               { position: 20, type: #FIELDGROUP_REFERENCE, label: 'Administrative Data', targetQualifier: 'Admin' },
+               { position: 15, type: #LINEITEM_REFERENCE, label: 'Ratings', targetElement: '_Ratings' } ]
 
   /* Fields */
   @UI.fieldGroup: [ { position: 10, qualifier: 'Admin' } ]

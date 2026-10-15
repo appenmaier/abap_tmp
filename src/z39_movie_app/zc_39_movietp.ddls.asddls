@@ -31,5 +31,8 @@ define root view entity ZC_39_MovieTP
       CreatedAt,
       CreatedBy,
       LastChangedAt,
-      LastChangedBy
+      LastChangedBy,
+
+      /* Associations */
+      _Ratings : redirected to composition child ZC_39_RatingTP
 }

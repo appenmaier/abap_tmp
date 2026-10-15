@@ -8,9 +8,14 @@
 "ZR_39_MOVIETP"
 ],
 "ASSOCIATED":
-[],
+[
+"ZC_39_RATINGTP",
+"ZR_39_RATINGTP"
+],
 "BASE":
-[],
+[
+"ZR_39_MOVIETP"
+],
 "ANNO_REF":
 [],
 "SCALAR_FUNCTION":
