@@ -7,6 +7,7 @@
 @Search.searchable: true
 
 define root view entity ZC_39_MovieTP
+  provider contract transactional_query
   as projection on ZR_39_MovieTP
 
 {
