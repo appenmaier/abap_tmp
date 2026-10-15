@@ -5,6 +5,9 @@
                   title.value: 'TravelId',
                   description.value: 'Description' }
 
+@UI.lineItem: [ { criticality: 'StatusCriticality' } ]
+@UI.presentationVariant: [ { sortOrder: [ { by: 'BeginDate', direction: #DESC } ] } ]
+
 annotate entity ZC_39_TravelTP with
 
 {
@@ -53,7 +56,7 @@ annotate entity ZC_39_TravelTP with
   Description;
 
   @UI.fieldGroup: [ { position: 90, qualifier: 'Details' } ]
-  @UI.lineItem: [ { position: 99 } ]
+  @UI.lineItem: [ { position: 99, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
   @UI.selectionField: [ { position: 60 } ]
   Status;
 

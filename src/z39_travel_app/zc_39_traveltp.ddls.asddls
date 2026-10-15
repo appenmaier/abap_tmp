@@ -13,6 +13,7 @@ define root view entity ZC_39_TravelTP
   key TravelId,
 
       AgencyId,
+      @ObjectModel.text.element: [ 'CustomerName' ]
       CustomerId,
       BeginDate,
       EndDate,
@@ -25,6 +26,10 @@ define root view entity ZC_39_TravelTP
       Description,
 
       Status,
+      
+      /* Transient Data */
+      StatusCriticality,
+      _CustomerIdText.CustomerName,
 
       /* Administrative Data */
       Createdby,

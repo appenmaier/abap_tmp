@@ -6,7 +6,9 @@
 "ZI_39_TRAVEL"
 ],
 "ASSOCIATED":
-[],
+[
+"ZI_39_CUSTOMERIDTEXT"
+],
 "BASE":
 [],
 "ANNO_REF":
