@@ -6,7 +6,10 @@
 "ZI_39_MOVIE"
 ],
 "ASSOCIATED":
-[],
+[
+"ZI_39_AVERAGERATING",
+"ZI_39_GENRETEXT"
+],
 "BASE":
 [],
 "ANNO_REF":
