@@ -26,8 +26,15 @@ define view entity ZI_39_Travel
       status        as Status,
 
       /* Administrative Data */
+      @Semantics.user.createdBy: true
       createdby     as Createdby,
+
+      @Semantics.systemDateTime.createdAt: true
       createdat     as Createdat,
+
+      @Semantics.user.lastChangedBy: true
       lastchangedby as Lastchangedby,
+
+      @Semantics.systemDateTime.lastChangedAt: true
       lastchangedat as Lastchangedat
 }
