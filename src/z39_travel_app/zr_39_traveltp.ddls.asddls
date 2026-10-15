@@ -6,8 +6,8 @@ define root view entity ZR_39_TravelTP
   as select from ZI_39_Travel
 
   association [1..1] to ZI_39_CustomerIdText as _CustomerIdText on $projection.CustomerId = _CustomerIdText.CustomerId
+  composition [0..*] of ZR_39_BookingTP      as _Bookings
 
-  //composition of target_data_source_name as _association_name
 {
   key TravelId,
 
@@ -26,7 +26,7 @@ define root view entity ZR_39_TravelTP
                   when 'P' then 2
                   when 'B' then 3
                   else 0
-      end as StatusCriticality,
+      end              as StatusCriticality,
 
       /* Administrative Data */
       Createdby,
@@ -35,7 +35,6 @@ define root view entity ZR_39_TravelTP
       Lastchangedat,
 
       /* Associations */
-      _CustomerIdText
-
-      //  _association_name // Make association public
+      _CustomerIdText,
+      _Bookings
 }
